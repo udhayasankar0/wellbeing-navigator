@@ -7,19 +7,29 @@ import {
 
 const faqs = [
   {
-    question: "How does the AI Health Assistant work?",
+    question: "How does the personalized health monitoring feature work?",
     answer:
-      "Our AI Health Assistant uses advanced machine learning to analyze your health data, provide personalized recommendations, and alert you to potential health concerns. It learns from your patterns and adapts to provide better support over time.",
+      "The personalized health monitoring feature allows users to log vital health metrics such as blood glucose levels, blood pressure, heart rate, and activity levels. The AI-driven system analyzes this data in real-time, offering immediate feedback, highlighting potential health risks, and tracking improvements or declines over time.",
   },
   {
-    question: "Is my health data secure?",
+    question: "What kind of support does the medication management feature provide?",
     answer:
-      "Yes, we take data security very seriously. All your health data is encrypted and stored securely following HIPAA compliance standards. We never share your personal information without your explicit consent.",
+      "The medication management feature enables users to input their medication schedules, dosages, and refill dates. The system sends automated reminders through push notifications or SMS for medication intake and prescription refills. It also has potential integration with pharmacy systems for seamless prescription management.",
   },
   {
-    question: "Can I use the platform with my existing medical devices?",
+    question: "How does the AI-driven lifestyle modification support benefit users?",
     answer:
-      "Yes, our platform is compatible with most modern medical devices and can integrate with various health monitoring equipment. Check our compatibility list for specific devices.",
+      "The AI-driven lifestyle modification support uses personalized data to provide tailored recommendations for diet, exercise, stress management, and sleep improvement. Users can set health-related goals and track their progress through visual dashboards. The AI also conducts comprehensive assessments to offer evidence-based advice.",
+  },
+  {
+    question: "What community engagement features are available on the platform?",
+    answer:
+      "The platform includes a social feature where users can connect with friends and family to share health achievements and participate in challenges. There are also community health challenges to promote motivation and accountability, along with peer support groups for sharing experiences and tips.",
+  },
+  {
+    question: "What functionalities does the AI chatbot and virtual health assistant offer?",
+    answer:
+      "The AI chatbot provides instant responses to common health queries, helps schedule appointments, and gives medication information. The virtual health assistant guides users through their care plans, explains dietary recommendations, provides exercise tutorials, and tracks progress to keep users motivated.",
   },
   {
     question: "What kind of support is available?",
@@ -40,16 +50,31 @@ const FAQSection = () => {
             Find answers to common questions about our platform
           </p>
         </div>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left">
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="bg-white rounded-lg hover:shadow-md transition-shadow duration-300"
+            >
+              <AccordionTrigger className="text-left px-6 py-4 text-lg">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
+              <AccordionContent className="px-6 py-4 text-gray-600">
+                {faq.answer}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
+        <div className="text-center mt-12">
+          <p className="text-xl text-gray-600 mb-4">Still have questions?</p>
+          <a
+            href="#contact"
+            className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 transform"
+          >
+            Contact Us
+          </a>
+        </div>
       </div>
     </section>
   );

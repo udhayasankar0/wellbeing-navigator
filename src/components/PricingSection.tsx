@@ -6,7 +6,7 @@ const plans = [
     price: "Free",
     features: [
       "Basic health tracking",
-      "Community access",
+      "Medication management",
       "Emergency alerts",
       "Mobile app access",
     ],
@@ -25,6 +25,7 @@ const plans = [
   {
     name: "Premium",
     price: "₹1299/mo",
+    popular: true,
     features: [
       "Everything in Pro",
       "Priority support",
@@ -52,8 +53,17 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
+              className={`relative bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${
+                plan.popular ? "border-2 border-primary" : ""
+              }`}
             >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
+                    Most Popular
+                  </span>
+                </div>
+              )}
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {plan.name}
               </h3>
@@ -63,12 +73,18 @@ const PricingSection = () => {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center">
-                    <Check className="text-primary mr-2" size={20} />
+                    <Check className="text-primary mr-2 flex-shrink-0" size={20} />
                     <span className="text-gray-600">{feature}</span>
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300">
+              <button
+                className={`w-full py-3 rounded-lg transition-all duration-300 hover:scale-105 ${
+                  plan.popular
+                    ? "bg-primary text-white hover:bg-primary/90"
+                    : "bg-accent text-primary hover:bg-accent/80"
+                }`}
+              >
                 Get Started
               </button>
             </div>

@@ -56,7 +56,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-600 hover:text-primary transition-colors duration-300"
+                className="text-gray-600 hover:text-primary transition-colors duration-300 hover:scale-105 transform"
               >
                 {item.label}
               </button>
@@ -67,7 +67,8 @@ const Navigation = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-primary"
+              className="text-gray-600 hover:text-primary transition-colors duration-300 p-2"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -76,13 +77,13 @@ const Navigation = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg">
+          <div className="md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg rounded-b-lg">
+            <div className="px-4 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-3 py-2 text-gray-600 hover:text-primary hover:bg-accent rounded-md transition-colors duration-300"
+                  className="block w-full text-left px-4 py-3 text-gray-600 hover:text-primary hover:bg-accent rounded-lg transition-all duration-300"
                 >
                   {item.label}
                 </button>
