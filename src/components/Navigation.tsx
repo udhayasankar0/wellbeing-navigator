@@ -16,7 +16,7 @@ const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Height of the fixed navbar
+      const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -47,23 +47,26 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold text-primary">YourWellbeing</span>
+            <img
+              src="/lovable-uploads/b105323a-ea7a-4358-aa84-cacefe7bfd40.png"
+              alt="Your WellBeing"
+              className="h-8 w-auto"
+            />
+            <span className="text-2xl font-bold text-primary ml-2">Your WellBeing</span>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-600 hover:text-primary transition-colors duration-300 hover:scale-105 transform"
+                className="text-gray-600 transition-all duration-300 hover:text-primary hover:font-bold hover:scale-110"
               >
                 {item.label}
               </button>
             ))}
           </div>
 
-          {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -75,7 +78,6 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
         {isOpen && (
           <div className="md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg rounded-b-lg">
             <div className="px-4 pt-2 pb-3 space-y-1">
@@ -83,7 +85,7 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-4 py-3 text-gray-600 hover:text-primary hover:bg-accent rounded-lg transition-all duration-300"
+                  className="block w-full text-left px-4 py-3 text-gray-600 hover:text-primary hover:font-bold hover:scale-105 hover:bg-accent rounded-lg transition-all duration-300"
                 >
                   {item.label}
                 </button>
