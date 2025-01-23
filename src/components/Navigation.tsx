@@ -60,7 +60,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-600 transition-all duration-300 hover:text-primary hover:font-bold hover:scale-110"
+                className="text-gray-600 transition-all duration-300 hover:text-primary hover:font-bold hover:text-lg"
               >
                 {item.label}
               </button>
@@ -85,7 +85,7 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-4 py-3 text-gray-600 hover:text-primary hover:font-bold hover:scale-105 hover:bg-accent rounded-lg transition-all duration-300"
+                  className="block w-full text-left px-4 py-3 text-gray-600 hover:text-primary hover:font-bold hover:text-lg hover:bg-accent rounded-lg transition-all duration-300"
                 >
                   {item.label}
                 </button>

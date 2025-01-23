@@ -7,8 +7,8 @@ const plans = [
     features: [
       "Basic health tracking",
       "Medication management",
-      "Emergency alerts",
       "Mobile app access",
+      "Basic analytics",
     ],
   },
   {
@@ -43,7 +43,7 @@ const PricingSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Simple, Transparent Pricing
+            Simple, <span className="text-primary">Transparent</span> Pricing
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Choose the plan that best fits your needs

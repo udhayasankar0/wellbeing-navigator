@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -39,12 +40,14 @@ const faqs = [
 ];
 
 const FAQSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="faq" className="py-20 bg-accent">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <p className="text-xl text-gray-600">
             Find answers to common questions about our platform
@@ -68,12 +71,12 @@ const FAQSection = () => {
         </Accordion>
         <div className="text-center mt-12">
           <p className="text-xl text-gray-600 mb-4">Still have questions?</p>
-          <a
-            href="#contact"
+          <button
+            onClick={() => navigate("/congratulations")}
             className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 transform"
           >
             Contact Us
-          </a>
+          </button>
         </div>
       </div>
     </section>
