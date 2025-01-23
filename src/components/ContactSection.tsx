@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +26,7 @@ const ContactSection = () => {
 
     setFormData({ name: "", email: "", message: "" });
     setIsSubmitting(false);
+    navigate("/congratulations");
   };
 
   const handleChange = (

@@ -1,9 +1,6 @@
 import { ArrowDown } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
-  
   const scrollToFeatures = () => {
     const featuresSection = document.getElementById("features");
     if (featuresSection) {
@@ -27,7 +24,6 @@ const HeroSection = () => {
         </p>
         <div className="space-x-4 mb-16 animate-fade-in">
           <button 
-            onClick={() => navigate("/congratulations")}
             className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300 hover:scale-105 transform"
           >
             Get Started Free
